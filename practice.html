@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <script>
+        //function curring
+        function multiply(x,y){
+            return x*y;
+        }
+        let multiplybyTwo=multiply.bind(this,2);
+        console.log(multiplybyTwo(5));
+
+        let multiplybyThree=multiply.bind(this,3);
+        console.log(multiplybyThree(10));
+
+        //currying via function closure
+        let mul=function(a){
+            return function(b){
+                console.log(a*b);
+            }
+        }
+        let mulbyTwo=mul(2);
+        mulbyTwo(5);
+
+        let mulbyThree=mul(3);
+        mulbyThree(10);
+    </script>
+</body>
+</html>
